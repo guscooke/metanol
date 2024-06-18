@@ -26,11 +26,11 @@ const Login = () => {
     };
 
     return (
-        <div className="flex min-h-screen">
-            <div className="w-1/2 bg-slate-800 flex items-center justify-center">
-                <h1 className="text-5xl font-bold text-white">Methanol Report</h1>
+        <div className="flex flex-col min-h-screen bg-slate-800 sm:flex-row">
+            <div className="flex items-center justify-center p-8 sm:w-1/2">
+                <h1 className="text-3xl font-bold text-white sm:text-5xl">Methanol Report</h1>
             </div>
-            <div className="w-1/2 flex items-center justify-center bg-zinc-700">
+            <div className="flex items-center justify-center bg-zinc-700 p-8 sm:w-1/2">
                 <div className="bg-neutral-200 p-8 rounded-lg shadow-md w-full max-w-md border-4 border-gray-700 shadow-neutral-900">
                     <h2 className="text-2xl font-bold mb-6 text-center text-black">Login</h2>
                     <form onSubmit={handleLogin}>
@@ -71,4 +71,5 @@ const Login = () => {
 };
 
 export default Login;
+
 

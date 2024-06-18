@@ -59,9 +59,9 @@ const options = {
 const MetDash = () => {
     return (
         <>
-            <main className="flex-1 p-8 bg-gray-100">
+            <main className="flex-1 p-4 bg-gray-100">
                 {/* Widgets */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Volume (kg)</h2>
                         <p>1.826,18</p>
@@ -78,66 +78,39 @@ const MetDash = () => {
                         <h2 className="text-2xl font-bold mb-4">Margin</h2>
                         <p>usd 33.937,23</p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-green-500 p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Other Costs</h2>
                         <p>usd 331,10</p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-red-500 p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Warehousing</h2>
                         <p>usd 1.600,09</p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-orange-500 p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Freight of Transportation</h2>
                         <p>usd 47.767,82</p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-purple-500 p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Margem Média Bruta</h2>
-                        <p>usd 18,58</p>
+                        <p>18,58 %</p>
                     </div>
                 </div>
 
-                {/* Table and Pie Chart Section */}
-                <div className="flex">
-                    {/* Table Section */}
-                    <div className="bg-white p-8 rounded-lg shadow-md border-4 border-gray-900 w-1/2 mr-4">
-                        <h2 className="text-2xl font-bold mb-6">Clientes Cotas</h2>
-                        <table className="w-full mb-6">
-                            <thead>
-                                <tr className="bg-gray-200">
-                                    <th className="border px-4 py-2">Client</th>
-                                    <th className="border px-4 py-2">Volume</th>
-                                    <th className="border px-4 py-2">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="border px-4 py-2">Sun Energy</td>
-                                    <td className="border px-4 py-2">1000</td>
-                                    <td className="border px-4 py-2">800</td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2">Sister Quimica</td>
-                                    <td className="border px-4 py-2">1200</td>
-                                    <td className="border px-4 py-2">900</td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2">Sp Quim</td>
-                                    <td className="border px-4 py-2">1500</td>
-                                    <td className="border px-4 py-2">700</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                {/* Tabela/Pizza gráfica */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-2xl font-bold mb-4">Tabela</h2>
+                        {/* Adicione aqui a sua tabela */}
                     </div>
-
-                    {/* Pie Chart Section */}
-                    <div className="bg-white p-8 rounded-lg shadow-md border-4 border-gray-900 w-1/2">
-                        <h2 className="text-2xl font-bold mb-6">Financial Overview </h2>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-2xl font-bold mb-4">Pizza Gráfica</h2>
                         <Pie data={dataJanuary} options={options} />
                     </div>
                 </div>
             </main>
         </>
     );
-}
+};
 
 export default MetDash;
+

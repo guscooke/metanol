@@ -4,6 +4,7 @@ import MetanolPage from './MetanolPage';
 
 const Dashboard = () => {
     const [currentComponent, setCurrentComponent] = useState('MetDash');
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const renderComponent = () => {
         switch (currentComponent)
@@ -12,7 +13,6 @@ const Dashboard = () => {
                 return <MetDash />;
             case 'MetanolPage':
                 return <MetanolPage />;
-            // Adicione mais cases aqui se houver mais componentes
             default:
                 return <MetDash />;
         }
@@ -23,13 +23,18 @@ const Dashboard = () => {
             {/* Navbar */}
             <nav className="bg-gray-700 p-4 flex justify-between items-center">
                 <div className="text-white font-bold text-xl">Metanol Estatísticas</div>
-                <div className="text-white">Welcome, Gustavo</div>
+                <button
+                    className="text-white sm:hidden"
+                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                >
+                    ☰
+                </button>
+                <div className="text-white hidden sm:block">Welcome, Gustavo</div>
             </nav>
 
-            {/* Main Content */}
             <div className="flex">
                 {/* Sidebar */}
-                <aside className="w-1/8 bg-gray-800 text-white">
+                <aside className={`bg-gray-800 text-white sm:block ${isSidebarOpen ? 'block' : 'hidden'}`}>
                     <div className="p-4 font-bold text-lg border-b border-gray-700"></div>
                     <ul className="p-4">
                         <li className="mb-4">
@@ -59,9 +64,6 @@ const Dashboard = () => {
                             </button>
                         </li>
                         <hr className="border-gray-600" />
-                        {/* <li className="mb-4">
-                            <button className="w-full text-left py-2 px-4 bg-gray-700 rounded hover:bg-gray-600">Logout</button>
-                        </li> */}
                     </ul>
                 </aside>
 
@@ -74,5 +76,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
