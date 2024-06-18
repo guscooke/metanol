@@ -96,11 +96,38 @@ const MetDash = () => {
                     </div>
                 </div>
 
-                {/* Tabela/Pizza gráfica */}
+                {/* Tabela e Pizza Gráfica */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Tabela</h2>
-                        {/* Adicione aqui a sua tabela */}
+                        <div className="overflow-x-auto">
+                            <table className="w-full mb-6">
+                                <thead>
+                                    <tr className="bg-gray-200">
+                                        <th className="border px-4 py-2">Client</th>
+                                        <th className="border px-4 py-2">Volume</th>
+                                        <th className="border px-4 py-2">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="border px-4 py-2">Sun Energy</td>
+                                        <td className="border px-4 py-2">1000</td>
+                                        <td className="border px-4 py-2">800</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="border px-4 py-2">Sister Quimica</td>
+                                        <td className="border px-4 py-2">1200</td>
+                                        <td className="border px-4 py-2">900</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="border px-4 py-2">Sp Quim</td>
+                                        <td className="border px-4 py-2">1500</td>
+                                        <td className="border px-4 py-2">700</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Pizza Gráfica</h2>
@@ -113,4 +140,3 @@ const MetDash = () => {
 };
 
 export default MetDash;
-
