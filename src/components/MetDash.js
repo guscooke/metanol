@@ -99,7 +99,7 @@ const MetDash = () => {
                 {/* Tabela e Pizza Gráfica */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Tabela</h2>
+                        <h2 className="text-2xl font-bold mb-4">Log Clientes</h2>
                         <div className="overflow-x-auto">
                             <table className="w-full mb-6">
                                 <thead>
@@ -113,24 +113,24 @@ const MetDash = () => {
                                     <tr>
                                         <td className="border px-4 py-2">Sun Energy</td>
                                         <td className="border px-4 py-2">1000</td>
-                                        <td className="border px-4 py-2">800</td>
+                                        <td className="border px-4 py-2">400</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sister Quimica</td>
-                                        <td className="border px-4 py-2">1200</td>
-                                        <td className="border px-4 py-2">900</td>
+                                        <td className="border px-4 py-2">500</td>
+                                        <td className="border px-4 py-2">380</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sp Quim</td>
-                                        <td className="border px-4 py-2">1500</td>
-                                        <td className="border px-4 py-2">700</td>
+                                        <td className="border px-4 py-2">400</td>
+                                        <td className="border px-4 py-2">389</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Pizza Gráfica</h2>
+                        <h2 className="text-2xl font-bold mb-4">Visão Geral</h2>
                         <Pie data={dataJanuary} options={options} />
                     </div>
                 </div>

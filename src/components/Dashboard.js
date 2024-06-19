@@ -29,7 +29,7 @@ const Dashboard = () => {
                 >
                     ☰
                 </button>
-                <div className="text-white hidden sm:block">Welcome, Gustavo</div>
+                <div className="text-white hidden sm:block">Welcome, Admin</div>
             </nav>
 
             <div className="flex">
