@@ -27,7 +27,7 @@ const Dashboard = () => {
             <nav className="bg-gray-700 p-4 flex justify-between items-center">
                 <div className="text-white font-bold text-xl">Metanol - MAY</div>
                 <button
-                    className="text-white sm:hidden"
+                    className="text-yellow-400 sm:hidden animate-pulse"
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 >
                     ☰
