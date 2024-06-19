@@ -133,6 +133,7 @@ const MetDash = () => {
     return (
         <>
             <main className="flex-1 p-4 bg-gray-100">
+
                 {/* Widgets */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                     <div className="bg-white p-6 rounded-lg shadow-md">
@@ -169,6 +170,42 @@ const MetDash = () => {
                     </div>
                 </div>
 
+                {/* FOB Houston Table and Line Chart (side by side) */}
+                <div className="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 className="text-2xl font-bold mb-4">FOB Houston</h2>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="overflow-x-auto mb-6">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="bg-gray-200">
+                                        <th className="border px-4 py-2">Month</th>
+                                        <th className="border px-4 py-2">Index</th>
+                                        <th className="border px-4 py-2">Low</th>
+                                        <th className="border px-4 py-2">High</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th className="border px-4 py-2">June</th>
+                                        <td className="border px-4 py-2">usd 342,48</td>
+                                        <td className="border px-4 py-2">usd 339,15 </td>
+                                        <td className="border px-4 py-2">usd 345,80</td>
+                                    </tr>
+                                    <tr>
+                                        <th className="border px-4 py-2">July</th>
+                                        <td className="border px-4 py-2">usd 339,15</td>
+                                        <td className="border px-4 py-2">usd 335,83</td>
+                                        <td className="border px-4 py-2">usd 342,82</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <Line data={dataFobHouston} options={optionsFobHouston} />
+                        </div>
+                    </div>
+                </div>
+
                 {/* Table and Bar Chart */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
@@ -185,18 +222,18 @@ const MetDash = () => {
                                 <tbody>
                                     <tr>
                                         <td className="border px-4 py-2">Sun Energy</td>
-                                        <td className="border px-4 py-2">1000</td>
-                                        <td className="border px-4 py-2">800</td>
+                                        <td className="border px-4 py-2">400</td>
+                                        <td className="border px-4 py-2">400</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sister Quimica</td>
-                                        <td className="border px-4 py-2">1200</td>
-                                        <td className="border px-4 py-2">900</td>
+                                        <td className="border px-4 py-2">500</td>
+                                        <td className="border px-4 py-2">400</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sp Quim</td>
                                         <td className="border px-4 py-2">1500</td>
-                                        <td className="border px-4 py-2">700</td>
+                                        <td className="border px-4 py-2">400</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -205,40 +242,6 @@ const MetDash = () => {
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Gráfico</h2>
                         <Bar data={dataJanuary} options={options} />
-                    </div>
-                </div>
-
-                {/* FOB Houston Table and Line Chart */}
-                <div className="bg-white p-6 rounded-lg shadow-md mt-8">
-                    <h2 className="text-2xl font-bold mb-4">FOB Houston</h2>
-                    <div className="overflow-x-auto mb-6">
-                        <table className="w-full">
-                            <thead>
-                                <tr className="bg-gray-200">
-                                    <th className="border px-4 py-2">Month</th>
-                                    <th className="border px-4 py-2">Index</th>
-                                    <th className="border px-4 py-2">Low</th>
-                                    <th className="border px-4 py-2">High</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th className="border px-4 py-2">June</th>
-                                    <td className="border px-4 py-2">usd 342,48</td>
-                                    <td className="border px-4 py-2">usd 339,15 </td>
-                                    <td className="border px-4 py-2">usd 345,80</td>
-                                </tr>
-                                <tr>
-                                    <th className="border px-4 py-2">July</th>
-                                    <td className="border px-4 py-2">usd 339,15</td>
-                                    <td className="border px-4 py-2">usd 335,83</td>
-                                    <td className="border px-4 py-2">usd 342,82</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <Line data={dataFobHouston} options={optionsFobHouston} />
                     </div>
                 </div>
             </main>
