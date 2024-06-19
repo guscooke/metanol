@@ -140,7 +140,7 @@ const MetDash = () => {
                         <h2 className="text-2xl font-bold mb-4">Volume (kg)</h2>
                         <p>1.826,18</p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="bg-yellow-400 p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Net Revenue</h2>
                         <p>usd 798.585,55</p>
                     </div>
@@ -161,12 +161,18 @@ const MetDash = () => {
                         <p>usd 1.600,09</p>
                     </div>
                     <div className="bg-orange-500 p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Freight of Transportation</h2>
+                        <h2 className="text-2xl font-bold mb-4 ">Port Transp cost</h2>
                         <p>usd 47.767,82</p>
                     </div>
                     <div className="bg-purple-500 p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Margem Média Bruta</h2>
+                        <h2 className="text-2xl font-bold mb-4">Gross Average Margin %</h2>
                         <p>18,58 %</p>
+                    </div>
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-lg">
+                        <h2 className="text-2xl font-bold mb-4 text-teal-50">Freight Offer</h2>
+                        <p className='text-teal-50'>usd 237,84</p>
+                        <p className='text-teal-50'>   CIF Paranagua/Santos: usd 319,84/MT
+                        </p>
                     </div>
                 </div>
 
