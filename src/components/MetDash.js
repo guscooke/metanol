@@ -1,14 +1,20 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
-    ArcElement,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
     Tooltip,
     Legend,
 } from 'chart.js';
 
 ChartJS.register(
-    ArcElement,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
     Tooltip,
     Legend
 );
@@ -29,7 +35,7 @@ const dataJanuary = {
                 '#FF6384',
                 '#36A2EB',
             ],
-            hoverBackgroundColor: [
+            borderColor: [
                 '#FF6384',
                 '#36A2EB',
                 '#FFCE56',
@@ -39,6 +45,7 @@ const dataJanuary = {
                 '#FF6384',
                 '#36A2EB',
             ],
+            borderWidth: 1,
         },
     ],
 };
@@ -52,6 +59,11 @@ const options = {
         title: {
             display: true,
             text: 'Financial Overview',
+        },
+    },
+    scales: {
+        y: {
+            beginAtZero: true,
         },
     },
 };
@@ -96,10 +108,10 @@ const MetDash = () => {
                     </div>
                 </div>
 
-                {/* Tabela e Pizza Gráfica */}
+                {/* Tabela e Gráfico de Barras */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Log Clientes</h2>
+                        <h2 className="text-2xl font-bold mb-4">Tabela</h2>
                         <div className="overflow-x-auto">
                             <table className="w-full mb-6">
                                 <thead>
@@ -113,25 +125,25 @@ const MetDash = () => {
                                     <tr>
                                         <td className="border px-4 py-2">Sun Energy</td>
                                         <td className="border px-4 py-2">1000</td>
-                                        <td className="border px-4 py-2">400</td>
+                                        <td className="border px-4 py-2">800</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sister Quimica</td>
-                                        <td className="border px-4 py-2">500</td>
-                                        <td className="border px-4 py-2">380</td>
+                                        <td className="border px-4 py-2">1200</td>
+                                        <td className="border px-4 py-2">900</td>
                                     </tr>
                                     <tr>
                                         <td className="border px-4 py-2">Sp Quim</td>
-                                        <td className="border px-4 py-2">400</td>
-                                        <td className="border px-4 py-2">389</td>
+                                        <td className="border px-4 py-2">1500</td>
+                                        <td className="border px-4 py-2">700</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Visão Geral</h2>
-                        <Pie data={dataJanuary} options={options} />
+                        <h2 className="text-2xl font-bold mb-4">Grafico</h2>
+                        <Bar data={dataJanuary} options={options} />
                     </div>
                 </div>
             </main>
