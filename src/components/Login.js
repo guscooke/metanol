@@ -11,8 +11,8 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        const correctUsername = 'admin';
-        const correctPassword = '1234';
+        const correctUsername = process.env.REACT_APP_USERNAME;
+        const correctPassword = process.env.REACT_APP_NUMBER;
 
         if (username === correctUsername && password === correctPassword)
         {
