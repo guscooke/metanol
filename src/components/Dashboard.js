@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MetDash from './MetDash';
 import MetanolPage from './MetanolPage';
+import Clients from './Clients';
 
 const Dashboard = () => {
     const [currentComponent, setCurrentComponent] = useState('MetDash');
@@ -13,6 +14,8 @@ const Dashboard = () => {
                 return <MetDash />;
             case 'MetanolPage':
                 return <MetanolPage />;
+            case 'Clients':
+                return <Clients />;
             default:
                 return <MetDash />;
         }
@@ -22,7 +25,7 @@ const Dashboard = () => {
         <div className="min-h-screen bg-gray-100">
             {/* Navbar */}
             <nav className="bg-gray-700 p-4 flex justify-between items-center">
-                <div className="text-white font-bold text-xl">Metanol Statistics - MAY</div>
+                <div className="text-white font-bold text-xl">Metanol - MAY</div>
                 <button
                     className="text-white sm:hidden"
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -42,7 +45,7 @@ const Dashboard = () => {
                                 onClick={() => setCurrentComponent('MetDash')}
                                 className="w-full text-left py-2 px-4 bg-gray-700 rounded hover:bg-gray-600"
                             >
-                                Operacional
+                                Overview
                             </button>
                         </li>
                         <hr className="border-gray-600" />
@@ -51,16 +54,16 @@ const Dashboard = () => {
                                 onClick={() => setCurrentComponent('MetanolPage')}
                                 className="w-full text-left py-2 px-4 bg-gray-700 rounded hover:bg-gray-600"
                             >
-                                Overview
+                                Panorama
                             </button>
                         </li>
                         <hr className="border-gray-600" />
                         <li className="mb-4">
                             <button
-                                onClick={() => setCurrentComponent('AnalysisPage')}
+                                onClick={() => setCurrentComponent('Clients')}
                                 className="w-full text-left py-2 px-4 bg-gray-700 rounded hover:bg-gray-600"
                             >
-                                Análise
+                                Clients
                             </button>
                         </li>
                         <hr className="border-gray-600" />
