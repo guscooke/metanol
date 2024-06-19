@@ -1,9 +1,11 @@
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
+    PointElement,
+    LineElement,
     BarElement,
     Title,
     Tooltip,
@@ -13,6 +15,8 @@ import {
 ChartJS.register(
     CategoryScale,
     LinearScale,
+    PointElement,
+    LineElement,
     BarElement,
     Title,
     Tooltip,
@@ -62,7 +66,64 @@ const options = {
         },
     },
     scales: {
+        x: {
+            beginAtZero: true, // Adjust as needed
+        },
         y: {
+            indexAxis: 'y',
+            beginAtZero: true,
+        },
+    },
+};
+
+// Data for the FOB Houston line chart
+const dataFobHouston = {
+    labels: ['June', 'July'],
+    datasets: [
+        {
+            label: 'Index',
+            data: [342.48, 339.15],
+            borderColor: '#36A2EB',
+            backgroundColor: '#36A2EB',
+            fill: false,
+            tension: 0.1,
+        },
+        {
+            label: 'Low',
+            data: [339.15, 335.83],
+            borderColor: '#FF6384',
+            backgroundColor: '#FF6384',
+            fill: false,
+            tension: 0.1,
+        },
+        {
+            label: 'High',
+            data: [345.80, 342.82],
+            borderColor: '#FFCE56',
+            backgroundColor: '#FFCE56',
+            fill: false,
+            tension: 0.1,
+        },
+    ],
+};
+
+const optionsFobHouston = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top',
+        },
+        title: {
+            display: true,
+            text: 'FOB Houston Overview',
+        },
+    },
+    scales: {
+        x: {
+            beginAtZero: false, // Adjust as needed
+        },
+        y: {
+            indexAxis: 'x', // Invert Y-axis for this chart
             beginAtZero: true,
         },
     },
@@ -108,7 +169,7 @@ const MetDash = () => {
                     </div>
                 </div>
 
-                {/* Tabela e Gráfico de Barras */}
+                {/* Table and Bar Chart */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-2xl font-bold mb-4">Tabela</h2>
@@ -142,8 +203,42 @@ const MetDash = () => {
                         </div>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">Grafico</h2>
+                        <h2 className="text-2xl font-bold mb-4">Gráfico</h2>
                         <Bar data={dataJanuary} options={options} />
+                    </div>
+                </div>
+
+                {/* FOB Houston Table and Line Chart */}
+                <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+                    <h2 className="text-2xl font-bold mb-4">FOB Houston</h2>
+                    <div className="overflow-x-auto mb-6">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="bg-gray-200">
+                                    <th className="border px-4 py-2">Month</th>
+                                    <th className="border px-4 py-2">Index</th>
+                                    <th className="border px-4 py-2">Low</th>
+                                    <th className="border px-4 py-2">High</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th className="border px-4 py-2">June</th>
+                                    <td className="border px-4 py-2">usd 342,48</td>
+                                    <td className="border px-4 py-2">usd 339,15 </td>
+                                    <td className="border px-4 py-2">usd 345,80</td>
+                                </tr>
+                                <tr>
+                                    <th className="border px-4 py-2">July</th>
+                                    <td className="border px-4 py-2">usd 339,15</td>
+                                    <td className="border px-4 py-2">usd 335,83</td>
+                                    <td className="border px-4 py-2">usd 342,82</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <Line data={dataFobHouston} options={optionsFobHouston} />
                     </div>
                 </div>
             </main>

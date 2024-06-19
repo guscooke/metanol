@@ -22,7 +22,7 @@ const Dashboard = () => {
         <div className="min-h-screen bg-gray-100">
             {/* Navbar */}
             <nav className="bg-gray-700 p-4 flex justify-between items-center">
-                <div className="text-white font-bold text-xl">Metanol Estatísticas</div>
+                <div className="text-white font-bold text-xl">Metanol Statistics - MAY</div>
                 <button
                     className="text-white sm:hidden"
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
