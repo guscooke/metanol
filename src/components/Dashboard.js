@@ -27,10 +27,10 @@ const Dashboard = () => {
             <nav className="bg-gray-700 p-4 flex justify-between items-center">
                 <div className="text-white font-bold text-xl">Metanol - MAY</div>
                 <button
-                    className="text-yellow-400 sm:hidden animate-pulse"
+                    className="text-white sm:hidden animate-pulse"
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                 >
-                    ☰
+                    🖱 menu
                 </button>
                 <div className="text-white hidden sm:block">Welcome, Admin</div>
             </nav>
