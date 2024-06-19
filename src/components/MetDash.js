@@ -23,7 +23,7 @@ const dataJanuary = {
     labels: ['Volume', 'Net Revenue', 'Cost of Goods', 'Margin', 'Other Costs', 'Warehousing', 'Freight of Transportation', 'Margem Média Bruta'],
     datasets: [
         {
-            label: 'January',
+            label: 'Maio',
             data: [1826.18, 798585.55, 714949.30, 33937.23, 331.10, 1600.09, 47767.82, 18.58],
             backgroundColor: [
                 '#FF6384',
